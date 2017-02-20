@@ -15,12 +15,15 @@ initConnect()
 
 testFlaskApp = Flask(__name__)
 
-appStorePath = os.path.dirname(
-    os.path.dirname(os.path.realpath(__file__))) +\
-    '\\PlaidSandbox\\static\\'
+try:
+    appStorePath = os.path.dirname(
+        os.path.dirname(os.path.realpath(__file__))) +\
+        '\\PlaidSandbox\\static\\'
 
-oldPath = os.getenv('LOCALAPPDATA').rstrip('\\') +\
-    '\\Python Sandbox Data\\PlaidSandbox\\test01\\'
+    oldPath = os.getenv('LOCALAPPDATA').rstrip('\\') +\
+        '\\Python Sandbox Data\\PlaidSandbox\\test01\\'
+except:
+    pass
 
 argIdxInArgv = 1
 
