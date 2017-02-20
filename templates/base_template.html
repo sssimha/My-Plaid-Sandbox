@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <title> {% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <h1 style="color: #5e9ca0;">Welcome</h1>
+    <table width="100%">
+        <tbody>
+            <tr height>
+                <td width=25%>
+                    {% block links %}
+                        <p><a href="{{ urlfor('index') }}">Home</a></p>
+                        <p><a href="{{ urlfor('help') }}">Help</a></p>
+                    {% endblock %}
+                </td>
+                <td>
+                    {% block body %}{% endblock %}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    {% block footer %}
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <p><font color="red">{{ message }}</font></p>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        <p>Running on {{ request.url }}</p>
+                    {% endblock %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>

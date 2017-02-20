@@ -1,0 +1,7 @@
+{% extends "base_template.html" %}
+{% block links %}
+    {{ super() }}
+    <p><a href="{{ urlfor('banklinks') }}">Bank Links</a></p>
+    <p><a href="{{ urlfor('virtaccounts') }}">Virtual Accounts</a></p>
+    <p><a href="{{ urlfor('logout') }}">Logout</a></p>
+{% endblock %}
