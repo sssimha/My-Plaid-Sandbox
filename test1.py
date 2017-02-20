@@ -91,7 +91,7 @@ def runthis():
     # Prepare Payloads to send
     r1 = requests.post(
         url=PLAID_URL_DEV + PLAID_END_CONNECT,
-        data=payloadChaseLogin
+        data=payloadLoginTest
     )
 
     r2 = requests.delete(
