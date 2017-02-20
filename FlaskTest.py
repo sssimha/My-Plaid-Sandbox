@@ -52,6 +52,7 @@ def reg():
     if 'username' in session:
         return redirect(url_for('index'))
     if request.method == 'POST':
+        initConnect(force_connect=True)
         extraLine = 'Username already exists'
         usr = User.objects.raw({uN: request.form[uN]})
         if(usr.count() == 0):
@@ -117,6 +118,7 @@ def index():
 def login():
     extraLine = ''
     if request.method == 'POST':
+        initConnect(force_connect=True)
         extraLine = 'Login Failed!! Username or password invalid'
         usr = User.objects.raw({uN: request.form[uN]})
         if(usr.count() != 0):
