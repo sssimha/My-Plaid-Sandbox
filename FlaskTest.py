@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 from .test1 import *
 from .UserFunctions import *
 from uuid import uuid4
+from mongobox import MongoBox
 
 initConnect()
 
@@ -102,16 +103,21 @@ def index():
             urlparse(request.url).port,
             url_for('logout'),
             url_for('test'))
+    box = MongoBox()
+    box.start()
     return '''
         <p>Hello unknown user! running on port %s
         <p>
         <p><a href="%s">Login</a>
         <p>
         <p><a href="%s">Click Here</a> to register
+        <p>
+        <p>%s
     ''' % (
         urlparse(request.url).port,
         url_for('login'),
-        url_for('reg'))
+        url_for('reg'),
+        box.port)
 
 
 @testFlaskApp.route('/login', methods=['GET', 'POST'])
