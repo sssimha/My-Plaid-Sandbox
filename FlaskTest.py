@@ -10,7 +10,6 @@ from urllib.parse import urlparse
 from .test1 import *
 from .UserFunctions import *
 from uuid import uuid4
-from mongobox import MongoBox
 
 initConnect()
 
@@ -103,8 +102,6 @@ def index():
             urlparse(request.url).port,
             url_for('logout'),
             url_for('test'))
-    box = MongoBox()
-    box.start()
     return '''
         <p>Hello unknown user! running on port %s
         <p>
