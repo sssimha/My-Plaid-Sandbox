@@ -1,4 +1,4 @@
-import .FlaskTest
-import .getCredentials
-import .test1
-import .UserFunctions
+from .FlaskTest import *
+from .getCredentials import *
+from .test1 import *
+from .UserFunctions import *
