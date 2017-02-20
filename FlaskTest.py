@@ -142,26 +142,26 @@ def logout():
     return redirect(url_for('index'))
 
 
-@testFlaskApp.route('/getfile/<filename>')
-def getfile(filename):
-
-    filename = appStorePath +\
-        filename.lstrip('.,\\/')
-
-    filereturned = runGetChase(filename)
-
-    print(os.path.basename(
-        filereturned.replace('\\', '/').replace('C:', '')))
-
-    if filereturned is None:
-        abort(404)
-    return testFlaskApp.send_static_file(
-        os.path.basename(
-            filereturned.replace('\\', '/').replace('C:', '')))
-    # return send_file(
-    #     filereturned.replace('\\', '/').replace('C:', ''))
-
-
+# @testFlaskApp.route('/getfile/<filename>')
+# def getfile(filename):
+# 
+#     filename = appStorePath +\
+#         filename.lstrip('.,\\/')
+# 
+#     filereturned = runGetChase(filename)
+# 
+#     print(os.path.basename(
+#         filereturned.replace('\\', '/').replace('C:', '')))
+# 
+#     if filereturned is None:
+#         abort(404)
+#     return testFlaskApp.send_static_file(
+#         os.path.basename(
+#             filereturned.replace('\\', '/').replace('C:', '')))
+#     # return send_file(
+#     #     filereturned.replace('\\', '/').replace('C:', ''))
+# 
+# 
 @testFlaskApp.route('/banklinks')
 def banklinks():
     pass
