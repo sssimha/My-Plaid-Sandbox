@@ -1,4 +1,4 @@
-from PlaidSandbox import FlaskTest
-from PlaidSandbox import getCredentials
-from PlaidSandbox import test1
-from PlaidSandbox import UserFunctions
+import .FlaskTest
+import .getCredentials
+import .test1
+import .UserFunctions
