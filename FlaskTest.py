@@ -87,7 +87,7 @@ def reg():
 
 @testFlaskApp.route('/test')
 def test():
-    return render_template('t_index.html')
+    return render_template('t_index.html.j2')
 
 
 @testFlaskApp.route("/")
@@ -152,12 +152,12 @@ def logout():
 #
 #     filename = appStorePath +\
 #         filename.lstrip('.,\\/')
-# 
+#
 #     filereturned = runGetChase(filename)
-# 
+#
 #     print(os.path.basename(
 #         filereturned.replace('\\', '/').replace('C:', '')))
-# 
+#
 #     if filereturned is None:
 #         abort(404)
 #     return testFlaskApp.send_static_file(
@@ -165,8 +165,8 @@ def logout():
 #             filereturned.replace('\\', '/').replace('C:', '')))
 #     # return send_file(
 #     #     filereturned.replace('\\', '/').replace('C:', ''))
-# 
-# 
+#
+#
 @testFlaskApp.route('/banklinks')
 def banklinks():
     pass

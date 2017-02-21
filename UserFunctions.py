@@ -5,8 +5,8 @@ serverConnected = False
 
 
 def initConnect(
-        server='mongodb://test_user:647g04@ds139288.mlab.com:39288/',
-        db='systix-sandbox',
+        server='mongodb://localhost:27017/',
+        db='test',
         force_connect=False):
     global serverConnected
     if((serverConnected is False) or force_connect):
