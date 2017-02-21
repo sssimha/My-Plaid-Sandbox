@@ -108,13 +108,10 @@ def index():
         <p><a href="%s">Login</a>
         <p>
         <p><a href="%s">Click Here</a> to register
-        <p>
-        <p>%s
     ''' % (
         urlparse(request.url).port,
         url_for('login'),
-        url_for('reg'),
-        box.port)
+        url_for('reg'))
 
 
 @testFlaskApp.route('/login', methods=['GET', 'POST'])
@@ -152,7 +149,7 @@ def logout():
 
 # @testFlaskApp.route('/getfile/<filename>')
 # def getfile(filename):
-# 
+#
 #     filename = appStorePath +\
 #         filename.lstrip('.,\\/')
 # 
